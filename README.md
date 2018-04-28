@@ -1,30 +1,30 @@
-# Magisk Module Template
+# Swap2System
 
-This `README.md` will be shown in Magisk Manager. Place any information / changelog / notes you like.
-
-**Please update `README.md` if you want to submit your module to the online repo!**
-
-Github has its own online markdown editor with a preview feature, you can use it to update your `README.md`! If you need more advanced syntax, check the [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-For more information about modules and repos, please check the [official documentations](https://github.com/topjohnwu/Magisk/blob/master/docs/modules.md)
-
----
-# **Module Name**
 ## Description
-Description here
-## Changelog
-Changelog here
-## Requirements
-- Requirement 1
-- Requirement *
-- Requirement n
-## Instructions
-Instructions here
-- Or other instructions here
-- Followed by more instructions
-1. Or a list of instructions
-2. With more instructions
-## Links
-[Module XDA Forum Thread](https://forum.xda-developers.com/apps/magisk/module-url-here "Module official XDA thread")
+This module allows to utilize unused space on `/system` as swap space.
 
-[Latest stable Magisk](http://www.tiny.cc/latestmagisk)
+## Changelog
+
+# v0.1.0
+- Bind mount `/system/swapfile.swp` to `/data/swapfile.swp` with read-write access
+- `swapon /data/swapfile.swp`
+
+## Requirements
+- Some free space on `/system`
+
+## Instructions
+- Open a terminal locally or via `adb shell`, then create the swap file:
+```
+su
+mount -o rw,remount /system
+dd if=/dev/zero of=/system/swapfile.swp
+mkswap /system/swapfile.swp
+mount -o r,remount /system
+```
+
+## Links
+[Swap2System on GitHub](https://github.com/porst17/swap2system)
+
+## DISCLAIMER
+Using flash memory as swap space may reduce its lifetime due to frequent write
+accesses.

@@ -1,7 +1,7 @@
-id=template
-name=Template Module
-version=v1
+id=swap2system
+name=Swap file on /system
+version=v0.1.0
 versionCode=1
-author=topjohnwu
-description=A short description
+author=porst17
+description=Use /system/swapfile.swp as swap file
 minMagisk=1500
