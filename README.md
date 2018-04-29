@@ -5,9 +5,19 @@ This module allows to utilize unused space on `/system` as swap space.
 
 ## Changelog
 
-# v0.1.0
+### [Unreleased](unreleased)
+
+### [0.2.0]
+- rename `/system/swapfile.swp` to `/system/swapfile`
+- mount `/system/swapfile` directly (no external mount-point needed)
+
+### [0.1.0] 
 - Bind mount `/system/swapfile.swp` to `/data/swapfile.swp` with read-write access
 - `swapon /data/swapfile.swp`
+
+[unreleased]: https://github.com/porst17/swap2system/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/porst17/swap2system/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/porst17/swap2system/compare/v0.0.0...v0.1.0
 
 ## Requirements
 - Some free space on `/system`
@@ -17,9 +27,9 @@ This module allows to utilize unused space on `/system` as swap space.
 ```
 su
 mount -o rw,remount /system
-dd if=/dev/zero of=/system/swapfile.swp
-mkswap /system/swapfile.swp
-mount -o r,remount /system
+dd if=/dev/zero of=/system/swapfile
+mkswap /system/swapfile
+mount -o ro,remount /system
 ```
 
 ## Links

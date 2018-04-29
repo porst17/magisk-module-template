@@ -5,6 +5,12 @@ MODDIR=${0%/*}
 
 # This script will be executed in post-fs-data mode
 # More info in the main Magisk thread
-mount --bind /system/swapfile.swp /data/swapfile.swp
-mount -o remount,rw /data/swapfile.swp
-swapon /data/swapfile.swp
+
+# Bind-mount /system/swapfile to itself to be able to remount it in read-write mode
+mount --bind /system/swapfile /system/swapfile
+
+# Remount /system/swapfile in read-write mode
+mount -o rw,remount /system/swapfile
+
+# Enable the swapfile
+swapon /system/swapfile
