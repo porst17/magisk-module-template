@@ -22,7 +22,7 @@ mount -o rw,remount /swapfile
 toybox swapon -p 0 /swapfile
 
 # set zram swap size
-echo 196M > /sys/class/block/zram0/disksize
+echo 600M > /sys/class/block/zram0/disksize
 
 toybox mkswap /dev/block/zram0
 

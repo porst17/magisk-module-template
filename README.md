@@ -8,6 +8,9 @@ It also add some zram as swap.
 
 ### [Unreleased](unreleased)
 
+### [0.3.1]
+- raise zram swap to 600MB
+
 ### [0.3.0]
 - raise minimum Magisk version to 20
 - add 196MB zram swap
@@ -20,7 +23,8 @@ It also add some zram as swap.
 - Bind mount `/system/swapfile.swp` to `/data/swapfile.swp` with read-write access
 - `swapon /data/swapfile.swp`
 
-[unreleased]: https://github.com/porst17/swap2system/compare/v0.3.0...HEAD
+[unreleased]: https://github.com/porst17/swap2system/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/porst17/swap2system/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/porst17/swap2system/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/porst17/swap2system/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/porst17/swap2system/compare/v0.0.0...v0.1.0

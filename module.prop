@@ -1,6 +1,6 @@
 id=swap2system
 name=Use swap file on /system and add zram
-version=0.3.0
-versionCode=3
+version=0.3.1
+versionCode=4
 author=porst17
 description=Use /system/swapfile as swap file and add zram swap
